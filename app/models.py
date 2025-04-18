@@ -11,7 +11,7 @@ class Class(models.Model):
 class Teacher(models.Model):
     full_name = models.ForeignKey(User, on_delete=models.SET_NULL , null=True)
     price = models.IntegerField()
-    classs = models.ManyToManyField(Class)
+    classs = models.ManyToManyField(Class , related_name="teachers")
 
     def __str__(self):
         return self.full_name.username
